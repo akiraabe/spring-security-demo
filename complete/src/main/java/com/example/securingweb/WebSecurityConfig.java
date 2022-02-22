@@ -22,10 +22,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 			.formLogin()
 				.loginPage("/login")
+				.loginProcessingUrl("/auth")
+				.successHandler(new LoginAuthSuccessHandler())
+				.failureHandler(new LoginAuthFailerHandler())
 				.permitAll()
 				.and()
 			.logout()
-				.permitAll();
+				.permitAll()
+		;
+//        http.requiresChannel(channel ->channel
+//                .anyRequest().requiresSecure());
 	}
 
 	@Bean
