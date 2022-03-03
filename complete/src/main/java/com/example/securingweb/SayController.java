@@ -16,6 +16,7 @@ public class SayController {
         for (int i = 2; i < 50000000; i++) {
             isPrime(i);
         }
+        System.out.println("done");
         return "prime";
     }
 
