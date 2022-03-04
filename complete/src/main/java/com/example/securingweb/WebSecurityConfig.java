@@ -31,9 +31,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 			.logout()
 				.permitAll()
-		;
-//        http.requiresChannel(channel ->channel
-//                .anyRequest().requiresSecure());
+				.and()
+				;
 	}
 
 	@Bean
